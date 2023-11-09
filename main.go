@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
@@ -111,7 +112,12 @@ func poll() {
 	})
 
 	handler := c.Handler(router)
-	log.Fatal(http.ListenAndServe(":10000", handler))
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+	log.Fatal(http.ListenAndServe(":"+port, handler))
 }
 
 // Main function
