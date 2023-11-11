@@ -1,6 +1,7 @@
-//Simple GO RESTful Address book API to teach myself APIs
+//Simple Heroku Hosted Go CRUD API Backend
+//Taken from my other project: https://github.com/JasperGrant/Go-RESTful-API-with-SQLite3
 //Written by Jasper Grant
-//2023-08-14
+//2023-11-11
 
 package main
 
@@ -115,7 +116,8 @@ func poll() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		//Not a good way to do this but works
+		port = "10000"
 	}
 	log.Fatal(http.ListenAndServe(":"+port, handler))
 }
