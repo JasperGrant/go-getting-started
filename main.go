@@ -108,7 +108,6 @@ func poll() {
 	router.HandleFunc("/contact/{ID}", readContactByID)
 	//Specify allowed contacts
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:4200"},
 		AllowCredentials: true,
 	})
 
