@@ -1,6 +1,6 @@
 # Minimal Heroku Hosted Go CRUD API Backend
 
-Used https://github.com/heroku/go-getting-started as a template
+Forked from https://github.com/heroku/go-getting-started
 
 # Code Explanation
 
